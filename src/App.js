@@ -10,9 +10,10 @@ function App() {
     <>
         <BrowserRouter>
             <Routes>
-                <Route index element={<Navbar />} />
-                    <Route path="cardActive" component={<CardActive />} />
-                    <Route path="cardComing" component={<CardComing />} />
+                    <Route path="/" element={Navbar}>
+                      <Route path="cardActive" element={CardActive} />
+                      <Route path="cardComing" element={CardComing} />
+                    </Route>
             </Routes>
             
         </BrowserRouter>
