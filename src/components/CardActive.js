@@ -1,7 +1,7 @@
 import React from 'react'
-import './Card.css'
+import './CardActive.css'
 
-function Card() {
+function CardActive() {
   return (
         <div className='card'>
                 <div className="first-row">
@@ -21,4 +21,4 @@ function Card() {
   )
 }
 
-export default Card
+export default CardActive
