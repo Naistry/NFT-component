@@ -22,7 +22,7 @@ function Navbar() {
             Coming
         </NavLink>
 
-        <article>
+        <article style={{display:'flex', flexWrap: 'wrap'}}>
             <Outlet />
         </article>
         

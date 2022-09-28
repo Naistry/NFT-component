@@ -1,23 +1,34 @@
 import React from 'react'
 import './CardActive.css'
 
-function CardActive() {
+function CardActive({colection}) {
+    console.log(colection)
   return (
-        <div className='card'>
-                <div className="first-row">
-                    <p className="position">1</p>
-                    <img className='card-img' src="https://cdn.idolbirthdays.net/images/43/juan-roman-riquelme.jpg" alt="imagen usuario" />
-                    <div className="first-row-text">
-                        <p className="user-name">riquelme</p>
-                        <p className="entry">Entry price: 4.23</p>
+    <>
+        {colection.map((data, i)=>{
+            if(data.state === 'live_wl'){
+                return(
+                    <div key={i} className='card'>
+                    <div className="first-row">
+                        <p className="position">{i+1}</p>
+                        <img className='card-img' src={data.url} alt="imagen usuario" />
+                        <div className="first-row-text">
+                            <p className="user-name">{data.collection_name}</p>
+                            <p className="entry">Entry price: {data.price_wl}</p>
+                        </div>
                     </div>
-                </div>
-
-                <div className="second-row">
-                    <p className="whitelisted">Users whitelisted</p>
-                    <p className="number-whitelisted"><span>340</span>/1000</p>
-                </div>
-        </div>
+    
+                    <div className="second-row">
+                        <p className="whitelisted">Users whitelisted</p>
+                        <p className="number-whitelisted">{data.users_wl}</p>
+                    </div>
+            </div>
+                )
+            }else{
+                return null
+            }
+        })}
+        </>
   )
 }
 
