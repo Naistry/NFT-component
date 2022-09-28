@@ -8,6 +8,7 @@
     --bold-font: 'Satoshi-Bold';
     --medium-font: 'Satoshi-Medium';
     --regular-font: 'Satoshi-Regular';
+    
 }
 
 *, *::after, *::before {
@@ -20,10 +21,18 @@ h1 {
     font-family: var(--bold-font);
     font-size: 40px;
     line-height: 54px;
-    /* color: var(--white); */
+    color: var(--white);
+}
+
+html {
+    display: flex;
+    justify-content: center;
 }
 
 body {
-    padding: 1.5rem;
-    /* background-color: var(--bg-color); */
+    padding: 6rem 3rem;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import './CardActive.css'
+import './Card.css'
 
 function CardActive({colection}) {
     console.log(colection)
@@ -14,13 +14,16 @@ function CardActive({colection}) {
                         <img className='card-img' src={data.url} alt="imagen usuario" />
                         <div className="first-row-text">
                             <p className="user-name">{data.collection_name}</p>
-                            <p className="entry">Entry price: {(Math.round(data.price_wl * 100) /100).toFixed(2)}</p>
+                            <div className="entry">
+                                <p className="entry-text">Entry price: <span className="entry-price">{(Math.round(data.price_wl * 100) /100).toFixed(2)}</span></p>
+                                <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="imagen solana" className="entry-img" />
+                            </div>
                         </div>
                     </div>
     
                     <div className="second-row">
                         <p className="whitelisted">Users whitelisted</p>
-                        <p className="number-whitelisted">{data.users_wl}</p>
+                        <p className="number-whitelisted"><span>{(data.users_wl).split('/')[0]}</span>/{(data.users_wl).split('/')[1]}</p>
                     </div>
             </div>
                 )
