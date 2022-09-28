@@ -14,7 +14,7 @@ function CardActive({colection}) {
                         <img className='card-img' src={data.url} alt="imagen usuario" />
                         <div className="first-row-text">
                             <p className="user-name">{data.collection_name}</p>
-                            <p className="entry">Entry price: {data.price_wl}</p>
+                            <p className="entry">Entry price: {(Math.round(data.price_wl * 100) /100).toFixed(2)}</p>
                         </div>
                     </div>
     
