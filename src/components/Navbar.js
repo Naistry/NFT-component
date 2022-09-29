@@ -1,6 +1,4 @@
 import React from 'react'
-import CardActive from './CardActive'
-import CardComing from './CardComing'
 import { NavLink, Outlet, Routes, Route } from 'react-router-dom'
 import './Navbar.css';
 
