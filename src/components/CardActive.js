@@ -2,7 +2,12 @@ import React from 'react'
 import './Card.css'
 
 function CardActive({colection}) {
-    console.log(colection)
+   
+    const getEntryPrice=(data)=>{
+        const price = (Math.round(data * 100) /100).toFixed(2);
+
+        return price;
+    }
   return (
     <>
         {colection.map((data, i)=>{
@@ -15,7 +20,7 @@ function CardActive({colection}) {
                         <div className="first-row-text">
                             <p className="user-name">{data.collection_name}</p>
                             <div className="entry">
-                                <p className="entry-text">Entry price: <span className="entry-price">{(Math.round(data.price_wl * 100) /100).toFixed(2)}</span></p>
+                                <p className="entry-text">Entry price: <span className="entry-price">{getEntryPrice(data.price_wl)}</span></p>
                                 <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="imagen solana" className="entry-img" />
                             </div>
                         </div>
